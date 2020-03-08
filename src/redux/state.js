@@ -1,3 +1,10 @@
+const ADD_POST = 'ADD_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
+
+
 let store = {
     _state: {
         profilePage: {
@@ -25,7 +32,8 @@ let store = {
                 {id: 4, name: 'Sasha'},
                 {id: 5, name: 'Victor'},
                 {id: 6, name: 'Valera'}
-            ]
+            ],
+            newMessageBody: "111"
         }
 
     },
@@ -40,23 +48,8 @@ let store = {
         this._callSubscriber = observer;
     },
 
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state)
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state)
-    },
-
-    dispatch(action) { // { type: 'ADD-POST'}
-        if (action.type === 'ADD-POST') {
+    dispatch(action) {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
@@ -65,11 +58,47 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.newText;
+            this._callSubscriber(this._state)
+        } else if (action.type === SEND_MESSAGE) {
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
+            this._state.dialogsPage.messages.push( {id: 10, message: body} );
+            this._callSubscriber(this._state)
+        } else {
+            alert("No found command!!!")
         }
 
+    }
+};
+
+export let addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    }
+};
+
+export let updateNewPostActionCreation = (text) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT,
+        newText: text
+    }
+};
+
+export let updateNewMessageActionCreation = (text) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY,
+        newText: text
+    }
+};
+
+export let sendMessageActionCreator = () => {
+    return {
+        type: SEND_MESSAGE
     }
 };
 
