@@ -9,6 +9,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
+    console.log(props)
     return (
             <div className='app-wrapper'>
                 <Header/>
