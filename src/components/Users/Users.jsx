@@ -15,6 +15,7 @@ let Users = (props) => {
             props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
+                        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                         <img alt='photo' src={u.photoUrl} className={styles.userPhoto}/>
                     </div>
                     <div>
