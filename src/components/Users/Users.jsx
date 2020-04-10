@@ -1,19 +1,24 @@
 import React from "react";
 import styles from './users.module.css'
-import * as axios from 'axios'
 import userPhoto from '../../assets/images/user.png'
+import * as axios from "axios";
 
-let Users = (props) => {
-    if (props.users.length === 0) {
+class Users extends React.Component {
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(respounse => {
-            props.setUsers(respounse.data.items);
-        });
-    }
+    getUsers = () => {
+        if (this.props.users.length === 0) {
 
-    return <div>
-        {
-            props.users.map(u => <div key={u.id}>
+            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(respounse => {
+                this.props.setUsers(respounse.data.items);
+            });
+        }
+    };
+
+    render() {
+        return <div>
+            <button onClick={this.getUsers}>Get users</button>
+            {
+                this.props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
                         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
@@ -22,27 +27,28 @@ let Users = (props) => {
                     <div>
                         {u.followed ?
                             <button onClick={() => {
-                                props.unfollow(u.id);
+                                this.props.unfollow(u.id);
                             }}>Unfllow</button> :
                             <button onClick={() => {
-                                props.follow(u.id);
+                                this.props.follow(u.id);
                             }}>Follow</button>
                         }
                     </div>
                 </span>
-                <span>
+                    <span>
                     <span>
                         <div>{u.name}</div>
                         <div>{u.status}</div>
                     </span>
                     <span>
-                        {/*<div>{u.location.country}</div>*/}
-                        {/*<div>{u.location.city}</div>*/}
+                        <div>u.location.country</div>
+                        <div>u.location.city</div>
                     </span>
                 </span>
-            </div>)
-        }
-    </div>
-};
+                </div>)
+            }
+        </div>
+    }
+}
 
 export default Users
