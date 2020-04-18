@@ -31,13 +31,13 @@ const profileReducer = (state = initialState, action) => {
     return state;
 };
 
-export let addPostActionCreator = () => {
+export let addPost = () => {
     return {
         type: ADD_POST
     }
 };
 
-export let updateNewPostActionCreation = (text) => {
+export let updateNewPostText = (text) => {
     return {
         type: UPDATE_NEW_POST_TEXT,
         newText: text
