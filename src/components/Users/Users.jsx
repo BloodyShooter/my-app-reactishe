@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 let Users = (props) => {
 
@@ -34,11 +35,39 @@ let Users = (props) => {
                     <div>
                         {u.followed ?
                             <button onClick={() => {
-                                props.unfollow(u.id);
-                            }}>Unfllow</button> :
+
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                    withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "b2268c53-b464-4f14-99e6-708f4d478308"
+                                    }
+                                })
+                                    .then(response => {
+                                        if  (response.data.resultCode === 0) {
+                                            props.unFollow(u.id);
+                                        }
+                                    });
+
+                                }}>
+                                Unfollow
+                            </button> :
                             <button onClick={() => {
-                                props.follow(u.id);
-                            }}>Follow</button>
+
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                    withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "b2268c53-b464-4f14-99e6-708f4d478308"
+                                    }
+                                })
+                                    .then(response => {
+                                        if  (response.data.resultCode === 0) {
+                                            props.follow(u.id);
+                                        }
+                                    });
+
+                            }}>
+                            Follow
+                            </button>
                         }
                     </div>
                 </span>
