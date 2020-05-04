@@ -8,7 +8,8 @@ const Header = (props) => {
             src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png'/>
 
         <div className={classes.loginBlock}>
-            {props.isAuth ? props.login
+            {props.isAuth
+                ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div>
                 : <NavLink to={'/Login'}>Login</NavLink>}
         </div>
     </header>
