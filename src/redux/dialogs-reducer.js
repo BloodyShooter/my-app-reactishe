@@ -25,7 +25,6 @@ export const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
             let body = action.newMessageBody;
-            debugger
             return {
                 ...state,
                 messages: [...state.messages, {id: 10, message: body}],
