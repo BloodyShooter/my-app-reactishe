@@ -2,7 +2,6 @@ import {authApi} from "../api/api";
 import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = 'SET_USER_DATA';
-const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 
 let initialState = {
@@ -21,10 +20,6 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload
             };
-        case TOGGLE_IS_FETCHING:
-            return {...state,
-                isFetching: action.isFetching
-            };
         default:
             return state
     }
@@ -37,15 +32,8 @@ export let setAuthUserData = (userId, email, login, isAuth) => {
     }
 };
 
-export let toggleIsFetching = (isFetching) => {
-    return {
-        type: TOGGLE_IS_FETCHING,
-        isFetching
-    }
-};
-
 export const getAuthUserData = () => (dispatch) => {
-    authApi.me()
+    return authApi.me()
         .then(response => {
             if (response.data.resultCode === 0) {
                 let {id, login, email} = response.data.data;
