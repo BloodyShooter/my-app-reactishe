@@ -1,4 +1,3 @@
-import {act} from "react-dom/test-utils";
 import {usersApi} from "../api/api";
 
 const FOLLOW = 'FOLLOW';
