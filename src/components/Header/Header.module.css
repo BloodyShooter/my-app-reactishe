@@ -1,6 +1,6 @@
 .header {
   grid-area: h;
-  background-color: #1f1f1f;
+  background-color: #5181b8;
 }
 
 .header img {
@@ -9,10 +9,10 @@
 
 .loginBlock {
   float: right;
-  text-overline-color: #ffffff;
+  text-overline-color: #000000;
 }
 
 .loginBlock a {
-  color: #ffffff;
+  color: #000000;
 }
 
