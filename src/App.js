@@ -12,6 +12,7 @@ import {getAuthUserData} from "./redux/auth-reducer";
 import {compose} from "redux";
 import {initializeAPP} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
+import NewsPage from "./components/News/News";
 
 
 class App extends React.Component {
@@ -41,6 +42,9 @@ class App extends React.Component {
 
                     <Route path='/login' render={() =>
                         <LoginPage/>}/>
+
+                    <Route path='/news' render={() =>
+                        <NewsPage/>}/>
                 </div>
             </div>
         );
