@@ -25,6 +25,8 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state,
+                //users: updateObjectInArray(state.users, action.userId, "id", { followed: true}) не рабочий код
+                //по какой то причине не добавляются пользователи в массив
                 //TODO довести рефактор
                 users: state.users.map(u => {
                     if (u.id === action.userId) {
@@ -37,7 +39,14 @@ const usersReducer = (state = initialState, action) => {
         case UN_FOLLOW:
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, "id", { followed: false})
+                //users: updateObjectInArray(state.users, action.userId, "id", { followed: false}) не рабочий код
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        //Интересный момент
+                        return {...u, followed: false}
+                    }
+                    return u;
+                })
             };
         case SET_USERS:
             return {...state,
@@ -137,11 +146,9 @@ export const unfollow = (userId) => {
 };
 
 const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) => {
-    debugger
     dispatch(toggleFollowingProgress(true, userId));
     let response = await apiMethod(userId);
 
-    debugger
     if  (response.data.resultCode === 0) {
         dispatch(actionCreator(userId));
     }
