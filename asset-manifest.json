@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/my-app-reactishe/static/css/main.af634b6b.chunk.css",
-    "main.js": "/my-app-reactishe/static/js/main.215dbabb.chunk.js",
-    "main.js.map": "/my-app-reactishe/static/js/main.215dbabb.chunk.js.map",
-    "runtime-main.js": "/my-app-reactishe/static/js/runtime-main.4ad91e11.js",
-    "runtime-main.js.map": "/my-app-reactishe/static/js/runtime-main.4ad91e11.js.map",
-    "static/js/2.a80b8161.chunk.js": "/my-app-reactishe/static/js/2.a80b8161.chunk.js",
-    "static/js/2.a80b8161.chunk.js.map": "/my-app-reactishe/static/js/2.a80b8161.chunk.js.map",
+    "main.js": "/my-app-reactishe/static/js/main.b1df1094.chunk.js",
+    "main.js.map": "/my-app-reactishe/static/js/main.b1df1094.chunk.js.map",
+    "runtime-main.js": "/my-app-reactishe/static/js/runtime-main.2edadc82.js",
+    "runtime-main.js.map": "/my-app-reactishe/static/js/runtime-main.2edadc82.js.map",
+    "static/js/2.974f3c35.chunk.js": "/my-app-reactishe/static/js/2.974f3c35.chunk.js",
+    "static/js/2.974f3c35.chunk.js.map": "/my-app-reactishe/static/js/2.974f3c35.chunk.js.map",
     "static/css/3.ed6bc1de.chunk.css": "/my-app-reactishe/static/css/3.ed6bc1de.chunk.css",
     "static/js/3.1be20d52.chunk.js": "/my-app-reactishe/static/js/3.1be20d52.chunk.js",
     "static/js/3.1be20d52.chunk.js.map": "/my-app-reactishe/static/js/3.1be20d52.chunk.js.map",
     "static/css/4.d8918712.chunk.css": "/my-app-reactishe/static/css/4.d8918712.chunk.css",
-    "static/js/4.1996e518.chunk.js": "/my-app-reactishe/static/js/4.1996e518.chunk.js",
-    "static/js/4.1996e518.chunk.js.map": "/my-app-reactishe/static/js/4.1996e518.chunk.js.map",
+    "static/js/4.2ad1bf3d.chunk.js": "/my-app-reactishe/static/js/4.2ad1bf3d.chunk.js",
+    "static/js/4.2ad1bf3d.chunk.js.map": "/my-app-reactishe/static/js/4.2ad1bf3d.chunk.js.map",
     "index.html": "/my-app-reactishe/index.html",
-    "precache-manifest.7a4b17fae24635a087a37dbbb613f068.js": "/my-app-reactishe/precache-manifest.7a4b17fae24635a087a37dbbb613f068.js",
+    "precache-manifest.0f904d89f156477c9ba5386f9401df0d.js": "/my-app-reactishe/precache-manifest.0f904d89f156477c9ba5386f9401df0d.js",
     "service-worker.js": "/my-app-reactishe/service-worker.js",
     "static/css/3.ed6bc1de.chunk.css.map": "/my-app-reactishe/static/css/3.ed6bc1de.chunk.css.map",
     "static/css/4.d8918712.chunk.css.map": "/my-app-reactishe/static/css/4.d8918712.chunk.css.map",
     "static/css/main.af634b6b.chunk.css.map": "/my-app-reactishe/static/css/main.af634b6b.chunk.css.map",
-    "static/js/2.a80b8161.chunk.js.LICENSE.txt": "/my-app-reactishe/static/js/2.a80b8161.chunk.js.LICENSE.txt"
+    "static/js/2.974f3c35.chunk.js.LICENSE.txt": "/my-app-reactishe/static/js/2.974f3c35.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4ad91e11.js",
-    "static/js/2.a80b8161.chunk.js",
+    "static/js/runtime-main.2edadc82.js",
+    "static/js/2.974f3c35.chunk.js",
     "static/css/main.af634b6b.chunk.css",
-    "static/js/main.215dbabb.chunk.js"
+    "static/js/main.b1df1094.chunk.js"
   ]
 }
