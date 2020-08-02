@@ -31,6 +31,10 @@ export const initializeAPP = () => (dispatch) => {
 
     promise.then(() => {
         dispatch(setInitializedSuccess());
+    }).catch(() => {
+        //TODO временое решение для gh pages
+        console.error("mode for gh-pages")
+        dispatch(setInitializedSuccess());
     });
 };
 
