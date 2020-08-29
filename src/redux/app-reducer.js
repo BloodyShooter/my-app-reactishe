@@ -4,7 +4,8 @@ const INITIALIZED_SUCCESS = 'SET_USER_DATA';
 
 
 let initialState = {
-    initialized: false
+    initialized: false,
+    globalError: null
 };
 
 const appReducer = (state = initialState, action) => {
